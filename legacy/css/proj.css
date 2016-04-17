@@ -1,0 +1,61 @@
+.navbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	background-color: black;
+}
+.carousel-inner img {
+	width: 100%;
+	max-height: 500px;
+	overflow: hidden;
+}
+.left-bar {
+	text-align: left;
+	display: block;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	float: left;
+}
+.search {
+	border: 3px solid red;
+	
+}
+.login {
+	border: 3px solid blue;
+}
+input {
+	margin: 3px;
+}
+.error {
+	color: red;
+}
+.entries {
+	margin-left: 350px;
+	margin-right: 5%;
+	border: 3px solid black;
+	background-color: #ffff66;
+	margin-top: 5px;
+}
+.entries .headers {
+	font-size: 150%;
+	text-align: center;
+	font-weight: bold;
+}
+.entries .date {
+	font-size: 90%;
+	text-align: right;
+	margin-right: 5%;
+}
+
+.contact {
+	display: block;
+	text-align: center;
+}
+
+input[type=submit] {
+	color: black;
+}
