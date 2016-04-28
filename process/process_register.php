@@ -45,7 +45,6 @@ var_dump($_POST);
 	else
 	{
 		$query_add_profile = "INSERT INTO `login`(`uname`, `passw`, `email`, `admin`, `sadmin`) VALUES (\"" . $_POST["uname"] . "\",\"" . $_POST["passw"] . "\",\"" . $_POST["email"] . "\",0,0)";
-		echo $query_add_profile;
 		if(! $return = $db->query($query_add_profile))
 		{
 			echo "Didn't add anything.";

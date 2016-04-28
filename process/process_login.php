@@ -32,6 +32,14 @@
 				$_SESSION["uname"] = $_POST["uname"];
 				$_SESSION["email"] = $row["email"];
 				$_SESSION["loggedin"] = 1;
+				if($row["admin"] == 1)
+				{
+					$_SESSION["admin"] = 1;
+				}
+				else
+				{
+					$_SESSION["admin"] = 0;
+				}
 			}
 			break;
 		}

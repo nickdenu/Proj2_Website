@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<nav class="navbar">
+		<nav class="navbar-fixed-top">
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
@@ -16,6 +16,23 @@
 					<li>
 						<a href="contact.php">Contact</a>
 					</li>
+					<?php
+						if (session_status() == PHP_SESSION_NONE)
+						{
+							session_start();
+						}
+						if(isset($_SESSION["admin"]))
+						{
+							if($_SESSION["admin"] == 1)
+							{
+								?>
+								<li>
+									<a href="add_sub.php">Add Submission</a>
+								</li>
+								<?php
+							}
+						}
+					?>
 				</ul>
 			</div>
 		</nav>

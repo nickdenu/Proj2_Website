@@ -17,13 +17,61 @@
 </head>
 
 <body>
-	<?php include '../include/nav-bar.php'; ?>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script>
+	window.twttr = (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+		if (d.getElementById(id)) return t;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "https://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		t._e = [];
+		t.ready = function(f) {
+			t._e.push(f);
+		};
+		return t;
+	}(document, "script", "twitter-wjs"));
+	</script>
+	<?php 
+		if (session_status() == PHP_SESSION_NONE)
+		{
+			session_start();
+		}
+		include '../include/nav-bar.php'; 
+	?>
 	</br>
 	</br>
 	</br>
 	</br>
-	<div class = "left-bar">
-		<?php include '../include/search.php'; ?>
+	<div class="left-bar">
+		<div class="search">
+			<center>Search Post Tags</center>
+			<input type="search" name="search" placeholder="Search Text" id="search_text"></input>
+			<br/>
+			<input type="submit" value="Search" id="search_button"></input>
+		</div>
+		</br>
+		<div class="fb-like" data-href="https://www.nickdenuswebsite.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+		<!-- This facebook like button will point elsewhere once a URL is purchased -->
+		<!-- This also doesn't work from localhost currently, facebook doesn't allow it. It will work from an actual URL -->
+		<br/>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="NickDenu">Tweet</a>
+		<a href="https://twitter.com/NickDenu" class="twitter-follow-button" data-show-count="false">Follow @NickDenu</a>
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+		</script>
 	</div>
 	<?php
 		$db = new mysqli("localhost","root","","denu");
@@ -97,7 +145,8 @@
  
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="../js/search.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 
 </html>
