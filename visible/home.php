@@ -52,7 +52,7 @@
   <div class="carousel-inner">
     <div class="item active" style="height=100px;">
 	  <?php
-		echo "<img src=\"../images/" . $images[0] . "\" alt=\"...\">";
+		echo "<img src=" . $images[0] . " alt=\"...\">";
 	  ?>
       <div class="carousel-caption">
           <h3><?php echo $headers[0];?></h3>
@@ -66,7 +66,7 @@
     </div>
     <div class="item" style="400px;">
       <?php
-		echo "<img src=\"../images/" . $images[1] . "\" alt=\"...\">";
+		echo "<img src=" . $images[1] . " alt=\"...\">";
 	  ?>
       <div class="carousel-caption">
           <h3><?php echo $headers[1];?></h3>
@@ -80,7 +80,7 @@
     </div>
     <div class="item" style="400px;">
       <?php
-		echo "<img src=\"../images/" . $images[2] . "\" alt=\"...\">";
+		echo "<img src=" . $images[2] . " alt=\"...\">";
 	  ?>
       <div class="carousel-caption">
           <h3><?php echo $headers[2];?></h3>
